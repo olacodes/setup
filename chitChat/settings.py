@@ -75,15 +75,15 @@ WSGI_APPLICATION = 'chitChat.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chitChatDB',
-        'HOST': 'localhost',
-        'USER': config('DBUSER'),
-        'PASSWORD': config('DBPASSWD'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'chitChatDB',
+#         'HOST': 'localhost',
+#         'USER': config('DBUSER'),
+#         'PASSWORD': config('DBPASSWD'),
+#     }
+# }
 if os.environ.get('GITHUB_WORKFLOW'):
     DATABASES = {
         'default': {
@@ -95,7 +95,16 @@ if os.environ.get('GITHUB_WORKFLOW'):
            'PORT': '5432',
         }
     }
-
+else:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'chitChatDB',
+        'HOST': 'localhost',
+        'USER': config('DBUSER'),
+        'PASSWORD': config('DBPASSWD'),
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
