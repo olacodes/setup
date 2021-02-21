@@ -6,7 +6,7 @@ from .base import *
 DEBUG = False
 DATABASES = {
   'default': {
-    **dj_database_url(config('DATABASE_URL')),
+    **dj_database_url.parse(config('DATABASE_URL')),
     'ENGINE': 'django.db.backends.postgresql',
   }
 }
