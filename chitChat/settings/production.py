@@ -3,6 +3,9 @@ from decouple import config
 from .base import *
 
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
 DEBUG = False
 DATABASES = {
   'default': {
@@ -10,3 +13,6 @@ DATABASES = {
     'ENGINE': 'django.db.backends.postgresql',
   }
 }
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
