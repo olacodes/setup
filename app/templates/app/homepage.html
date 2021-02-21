@@ -1,0 +1,10 @@
+<h1>
+  This is the homepage
+  <h1>
+    {% for i in threads %}
+    <h2>{{i}}</h2>
+    <h2>{{i.description}}</h2>
+    <h2>{{i.created_at}}</h2>
+    {% endfor %}
+  </h1>
+</h1>

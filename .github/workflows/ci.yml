@@ -1,0 +1,62 @@
+<<<<<<< HEAD
+name: ChitChat CI
+=======
+name: Chitchat CI
+>>>>>>> 8f811f21e88cf729b6c7c9ccd17ee4f39534d193
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> 8f811f21e88cf729b6c7c9ccd17ee4f39534d193
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: github_actions
+        ports:
+          - 5432:5432
+<<<<<<< HEAD
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+=======
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+      
+>>>>>>> 8f811f21e88cf729b6c7c9ccd17ee4f39534d193
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Tests
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      run: |
+<<<<<<< HEAD
+        python manage.py test --settings=ChitChat.settings.testing
+=======
+        python manage.py test
+>>>>>>> 8f811f21e88cf729b6c7c9ccd17ee4f39534d193
