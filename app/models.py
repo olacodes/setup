@@ -9,6 +9,7 @@ class User(models.Model):
   password = models.CharField(max_length=100, null=False)
   is_moderator = models.BooleanField(default=False)
   is_superadmin = models.BooleanField(default=False)
+  avartar = models.ImageField(null=True)
   created_at = models.DateTimeField(auto_now_add=True)
   modified_at = models.DateTimeField(auto_now=True)
 

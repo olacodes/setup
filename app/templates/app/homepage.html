@@ -1,3 +1,4 @@
+{% load static %}
 <h1>
   This is the homepage
   <h1>
@@ -5,6 +6,13 @@
     <h2>{{i}}</h2>
     <h2>{{i.description}}</h2>
     <h2>{{i.created_at}}</h2>
+    {% endfor %}
+  </h1>
+
+    <h1>
+    {% for img in users %}
+    <h3>{{img.username}}</h3>
+    <img src="{{ MEDIA_URL }}{{ img.avartar.url }}" width='250px' alt='img' />
     {% endfor %}
   </h1>
 </h1>
