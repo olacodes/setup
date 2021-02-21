@@ -42,4 +42,5 @@ jobs:
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
-        python manage.py test --settings=ChitChat.settings.testing
+        cd chitChat
+        python manage.py test --settings=chitChat.settings.testing
