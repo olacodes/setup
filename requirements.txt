@@ -1,16 +1,10 @@
 asgiref==3.3.1
-<<<<<<< HEAD
 dj-database-url==0.5.0
 Django==3.1.6
 gunicorn==20.0.4
-=======
-Django==3.1.6
->>>>>>> 8f811f21e88cf729b6c7c9ccd17ee4f39534d193
 psycopg2==2.8.6
 python-decouple==3.4
 pytz==2021.1
 sqlparse==0.4.1
-<<<<<<< HEAD
 whitenoise==5.2.0
-=======
->>>>>>> 8f811f21e88cf729b6c7c9ccd17ee4f39534d193
+

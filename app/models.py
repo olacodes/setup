@@ -1,5 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
 import uuid
 
 
@@ -43,7 +42,3 @@ class Post(models.Model):
   def __str__(self) -> str:
       return self.post
 
-=======
-
-# Create your models here.
->>>>>>> 8f811f21e88cf729b6c7c9ccd17ee4f39534d193

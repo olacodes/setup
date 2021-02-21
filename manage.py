@@ -6,11 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-<<<<<<< HEAD
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chitChat.settings')
-=======
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chitchat.settings')
->>>>>>> 8f811f21e88cf729b6c7c9ccd17ee4f39534d193
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
