@@ -41,5 +41,8 @@ jobs:
     - name: Run Tests
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        CLOUD_API_KEY: ${{ secrets.CLOUD_API_KEY }}
+        CLOUD_SECRET_KEY: ${{ secrets.CLOUD_SECRET_KEY }}
+        CLOUD_NAME: ${{ secrets.CLOUD_NAME }}
       run: |
         python manage.py test --settings=chitChat.settings.testing
