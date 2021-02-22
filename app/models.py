@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from cloudinary.models import CloudinaryField
 
 
 class User(models.Model):
@@ -27,6 +28,7 @@ class Thread(models.Model):
   description = models.TextField()
   created_at = models.DateTimeField(auto_now_add=True)
   modified_at = models.DateTimeField(auto_now=True)
+  thread_pics = CloudinaryField('image', default='img.url')
 
   def __str__(self):
       return self.title
